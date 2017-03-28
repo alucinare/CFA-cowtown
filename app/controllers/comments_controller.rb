@@ -30,8 +30,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     # This is taking the parameters of id for the post and assigning it to the post id in the new comment object
     @comment.post_id = params[:post_id]
-
-    @user = current_user.id
+    # Grabs the id for the current post and instantiates it. This was sent via the comment form on the comments/_form page
     @post = params[:post_id]
 
     # @post = params[:post_id]
@@ -39,7 +38,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       # this saves the comment object into the database and if successfully saved will redirect to the show page of the post to display the comments under the post
       if @comment.save
-        format.html { redirect_to [@user, @post], notice: 'Comment was successfully created.' }
+        # THIS IS THE SOLUTION! WOOT! post GET /posts/:id(.:format) posts#show
+        # This uses the path to the show action in the posts controller and it needs an id after it so I used the post id that I created previously and made it look for that.
+        format.html { redirect_to post_path(@post), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
