@@ -18,8 +18,10 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 
+<!-- this will render the comments _form and the comment means the comment in the _form will be @comments from the posts show controller which is Comment.new -->
 <%= render 'comments/form', comment: @comment %>
 
+<!-- this uses the comments instance variable in the posts controller which is assigned to @post.comments the .comments is a helper when there is a many_to relationship between the components. comments belongs to post and post can have many comments. -->
 <% @comments.each do |comment| %>
   <p><%= comment.user.email %> - <%= comment.created_at %></p>
   <p><%= comment.content %></p>

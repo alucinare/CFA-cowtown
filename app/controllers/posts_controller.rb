@@ -10,8 +10,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    # the comment form is being rendered on the posts show page which is why this is here
     @comment = Comment.new
-    # # Returns an array with all comments that relate to the post
+    # # Returns an array with all comments that relate to the post and this is also on the posts show page and is being used  list all the comments for a particular post
     @comments = @post.comments
   end
 
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    # this gives the post being created an association with the user that is creating it. The posts belong to the user and the user can have many posts, whereas the comments belong to the post, but the user can make many comments.
     @post.user_id = current_user.id
 
     respond_to do |format|

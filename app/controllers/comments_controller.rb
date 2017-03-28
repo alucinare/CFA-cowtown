@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     # This is taking the current user id and assigning it to the comment.user_id because it belongs to the user and the user can have many comments.
     @comment.user_id = current_user.id
-    # This is taking the parameters of id for the post and assigning it to the post id in the new comment object
+    # This is taking the parameters of id for the post and assigning it to the post id in the new comment object, instead of having the hidden field in the post, this is more secure.
     @comment.post_id = params[:post_id]
     # Grabs the id for the current post and instantiates it. This was sent via the comment form on the comments/_form page
     @post = params[:post_id]

@@ -1,3 +1,8 @@
+<!--  the array method used for this block is the way to call the child in the nested resource the hierchary of comment is to
+<%= render 'comments/form', comment: @comment %> in the show.html and this connected to
+@comment = Comment.new in the posts_controller
+and I think the value for @post is coming from the post/show.html view
+that comes from @post = Post.find(params[:id]) in the posts controller-->
 <%= form_for([@post, comment]) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
