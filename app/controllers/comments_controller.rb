@@ -24,13 +24,22 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    # This is creating a new comment object with the parameters sent by the form
     @comment = Comment.new(comment_params)
+    # This is taking the current user id and assigning it to the comment.user_id because it belongs to the user and the user can have many comments.
     @comment.user_id = current_user.id
+    # This is taking the parameters of id for the post and assigning it to the post id in the new comment object
     @comment.post_id = params[:post_id]
 
+    @user = current_user.id
+    @post = params[:post_id]
+
+    # @post = params[:post_id]
+
     respond_to do |format|
+      # this saves the comment object into the database and if successfully saved will redirect to the show page of the post to display the comments under the post
       if @comment.save
-        format.html { redirect_to post_path, notice: 'Comment was successfully created.' }
+        format.html { redirect_to [@user, @post], notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -38,6 +47,18 @@ class CommentsController < ApplicationController
       end
     end
   end
+
+  ##### ERRORS ####
+  # post_comment_path - ActionController::UrlGenerationError in CommentsController#create No route matches {:action=>"show", :controller=>"comments", :post_id=>"1"} missing required keys: [:id]
+
+  #  post_path - ActionController::UrlGenerationError in CommentsController#create No route matches {:action=>"show", :controller=>"posts", :post_id=>"1"} missing required keys: [:id]
+
+  # @comment.post_id undefined method `to_model' for 1:Integer Did you mean? to_yaml
+
+  # @post.id undefined method `id' for nil:NilClass
+  # @post - pretty much teh same as above but saying it cannot redirect to NIL, so there is no value in this.
+
+
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
