@@ -1,0 +1,23 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Cowtown</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><a href="/posts/new">New Post</a></li>
+        <li><!--<a href="badges.html">Components</a>--><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+        <li><!--<<a href="collapsible.html">Javascript</a>--><%= link_to 'Cancel', cancel_user_registration_path %></li>
+        <li><!--<a href="mobile.html">Mobile</a>--><%= link_to 'Posts', posts_path %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+      <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+  </div>
+</nav>
