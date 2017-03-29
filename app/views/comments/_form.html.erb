@@ -1,5 +1,6 @@
 <!--  the array method used for this block is the way to call the child in the nested resource the hierchary of comment is to
-<%= render 'comments/form', comment: @comment %> in the show.html and this connected to
+render form in the show.html and this connected to
+I had an error where I didn't comment out the render and it was looping through the this form 
 @comment = Comment.new in the posts_controller
 and I think the value for @post is coming from the post/show.html view
 that comes from @post = Post.find(params[:id]) in the posts controller-->

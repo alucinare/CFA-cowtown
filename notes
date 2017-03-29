@@ -4,3 +4,42 @@ This is the git page for the OMNIAUTH_facebook: https://github.com/plataformatec
 FB developer website: https://developers.facebook.com
 
 materialize git: https://github.com/mkhairi/materialize-sass
+
+rails g friendly_id - this setsup the configuration files.
+rails g migration AddSlugToPosts slgu:string:uniq - this is saying with have  title of type string and it has to be unique and it is adding it to the Posts table, we can add multiple.
+Post.find_each(&:save) - did this in the rails c in order to go back to the other posts and make the a valid slug id.
+
+A little bit about meta tags and how they offer extra information about our website. SEO meta tags: Search Engine Optimisation.
+
+Jamie doesn't really like how rails handles JS because of Turbolinks
+When we follow a link Turbolink uses an ajax request that doesn't require us to refresh the page. it gets the new body and puts the content in the body. Alot of JS gets brought in through the head so that maybe problem because it doesn't know to get the JS file from the head and it won't link it up.
+
+The way to get aronud it is through PAGE CHANGES EVENTS in ruby guides 5.2 - which is written in coffescript.
+
+ORR
+
+we can turn off turbo links by deleting the data-turbolinks-track in the JS head and remove the turbolinks line in the application.js
+rails popularised coffeescript JS because JS was really really poor in syntax, however, CS fell out of favour because the newest version of JS is neater and there isn't as many useful guides
+
+if we want more dynamic site we might need a JS framework to make it faster.
+
+
+TURBOLINKS
+<HTML>
+  <HEAD>
+    CSS/JS
+    meta tags
+    /any extra file that we may need/
+  </HEAD>
+
+
+a log in rails is anything that the server does.
+
+
+Mailer,
+
+don't worry about bootstrap or sass
+rails g mailer ContactMailer - Contact can be any word for whatever it is used for.
+mailgun is good server because it is free... you'll get credentials for this and they will give it to you. Don't use the ones in the guide.
+
+THis is to open up the bash file to create environmental variables (ENV): atom ~/.zshrc

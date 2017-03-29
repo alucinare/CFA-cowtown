@@ -29,9 +29,13 @@ class CommentsController < ApplicationController
     # This is taking the current user id and assigning it to the comment.user_id because it belongs to the user and the user can have many comments.
     @comment.user_id = current_user.id
     # This is taking the parameters of id for the post and assigning it to the post id in the new comment object, instead of having the hidden field in the post, this is more secure.
-    @comment.post_id = params[:post_id]
+    # @comment.post_id = params[:post_id]
     # Grabs the id for the current post and instantiates it. This was sent via the comment form on the comments/_form page
-    @post = params[:post_id]
+    # @post = params[:post_id]
+    @post = Post.friendly.find(params[:post_id])
+    @comment.post_id = @post.id
+    puts @comment.inspect
+    puts @post.id
 
     # @post = params[:post_id]
 
@@ -40,7 +44,7 @@ class CommentsController < ApplicationController
       if @comment.save
         # THIS IS THE SOLUTION! WOOT! post GET /posts/:id(.:format) posts#show
         # This uses the path to the show action in the posts controller and it needs an id after it so I used the post id that I created previously and made it look for that.
-        format.html { redirect_to post_path(@post), notice: 'Comment was successfully created.' }
+        format.html { redirect_to post_path(@post.id), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }

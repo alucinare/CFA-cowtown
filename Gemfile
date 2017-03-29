@@ -35,12 +35,20 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#self installed
+
 #devise
 gem 'devise'
 
 gem 'omniauth-facebook'
 
 gem 'materialize-sass'
+
+gem 'friendly_id', '~> 5.1.0'
+# https://github.com/norman/friendly_id
+
+gem 'simple_form'
+# https://github.com/plataformatec/simple_form
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
