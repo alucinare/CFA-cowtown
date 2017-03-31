@@ -21,6 +21,7 @@
   <%= @post.user.email %>
 </p>
 
+<!-- this is the JS button for sharing though it's not working at the moment  -->
 <div class="fb-share-button" data-href="http://google.com" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2F&amp;src=sdkpreparse">Share</a></div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -31,6 +32,5 @@
 
 <!-- this uses the comments instance variable in the posts controller which is assigned to @post.comments the .comments is a helper when there is a many_to relationship between the components. comments belongs to post and post can have many comments. -->
 <% @comments.each do |comment| %>
-  <p><%= comment.user.email %> - <%= comment.created_at %></p>
-  <p><%= comment.content %></p>
+  <%= render 'comments/show', comment: comment %>
 <% end %>

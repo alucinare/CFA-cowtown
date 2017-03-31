@@ -1,28 +1,21 @@
-<div class="row">
-  <div class="col s12  center-align">
-    <span class="flow-text">This div is 12-columns wide on all screen sizes</span>
-  </div>
-  <div class="col s6 offset-s6">
-    <span class="flow-text">6-columns (offset-by-6)</span>
-  </div>
+<div class="row center-align">
 </div>
-
-
-<div class="container center-align card-large">
-  <div class="row">
-    <div class="col s12 m6 offset-m3">
-      <div class="card large">
-        <div class="card-image">
-          <!-- <img src="images/sample-1.jpg"> -->
-          <span class="card-title">Welcome to Cowtown</span>
-        </div>
-        <div class="card-content">
-          <p>We are crazy people</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+<p id="notice"><%= notice %></p>
+<% @posts.each do |post| %>
+<div class="card-panel hoverable">
+  <div class="row center-align">
+    <div class="col s12 m12 l12 blue z-depth-4">
+      <p><%= post.content %></p>
+    </div>
+    <div class="row center-align">
+    </div>
+    <div class="col s12 m12 l12 blue z-depth-4">
+      <p>
+        <% post.comments.each do |comment| %>
+            <%= render 'comments/show', comment: comment %>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>
+<% end %>
