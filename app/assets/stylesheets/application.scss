@@ -21,3 +21,9 @@ $secondary-color: color("yellow", "base") !default;
 // * {
 //     border: 2px solid blue;
 // }
+
+.denied {
+  color:red !important;
+  font-size:4em;
+  font-weight:700;
+}

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,6 +18,10 @@ class User < ApplicationRecord
     # uncomment the line below to skip the confirmation emails.
     # user.skip_confirmation!
     end
+  end
+
+  def admin?
+    return has_role?(:admin)
   end
 
 end

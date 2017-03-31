@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
+
   # this is the pregenerated stuff
   # get 'contact/index'
   #
   # get 'contact/mail'
 
+  # this directs the /contact to the contact controller into the index view
   get 'contact', to: "contact#index"
   post 'contact', to: "contact#mail"
 

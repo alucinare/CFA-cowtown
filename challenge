@@ -1,0 +1,62 @@
+Challenge
+Ambiguity is built into this challenge
+QUESTIONS to ask:
+What's the problem you are solving?
+What outcome are you expecting?
+Do you have a DB preference?
+Do you have a design specs?
+What exact permissions do you want users to have?
+Where should it be hosted?
+What is the deadline?
+What is your budget?
+Do you have an existing application?
+Who are your users?
+Are there any legal considerations such as age limits?
+Are there any 3rd party systems to take into consideration to integrate with?
+What type of devices do your users use?
+Does this kind of product already exist?
+Are there other vendors in this projects?
+Do you have a project manager?
+What specific functionality do you require?
+What is the busines value that this will provide?
+What are you plans for the future?? this can help plan how the system will be implemented.
+... we can google software development client engagement questions...
+
+
+1. Create a forum for a particular niche
+2. Set up users and posts
+3. Set up role management through rolfiy with 3 roles (member, moderator, admin)
+Member
+- Make a post
+- Edit their own post
+- Comment on any post
+Moderator
+- Edit/Delete any posts
+- Same permissions as above
+Admin
+- Can delete users
+- Same permissions as above
+4. Authorize these roles with pundit
+
+
+Jamie's RL example
+automating enrolment for a school
+The big question was: HOW do they do it right now?
+1) student takes admissions test to see if they are suitable
+2) results sent to admissions team by email
+3) manually netered data into hubspot - this is where all their data is managed
+4) manually enter data into lMS - this is what they use to manage existing students
+Going through it with them shows that I understand and to clarify the process.
+Gather the requirements, what needs to be in the app and have that written down and signed by the client to make sure that if they asked for extra stuff, they won't get it for free.
+
+Questions to ask:
+Does it have to be sent to email?? make a server to convert it to JSON instead of XML and this will save 100 hrs (look at how it will save the company and free employees to do work that is more valuable)
+Why not send it to 3 straight away?
+Once in 3 why not automatically send it to 4? Send back to server to get the employees to double check stuff before it's automatically sent to LMS
+
+Time spent asking can vary, it took
+Took a month to put it together but there were ups and downs because they wanted things changed. This is why it's a good idea to have a scoop closer to the end
+
+Jamie usually does a fixed price, but there unreasonable actions
+
+Appster charges $10,000 for user stories and all initial development before the project starts to be implementtd

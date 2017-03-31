@@ -4,10 +4,12 @@ class ContactController < ApplicationController
 
   def mail
 
+    # this checks if the contact params have been filled in and if so it'll continue and take the email and message out of the contact object
     if params[:contact]
       email =  params[:contact][:email]
       message = params[:contact][:message]
 
+      # if the email was sent or the message was present this will 
       if email.present? || message.present?
         # Tell the UserMailer to send a welcome email after save
         ContactMailer.send_contact_email(email, message).deliver_now
@@ -24,5 +26,5 @@ class ContactController < ApplicationController
 
 
   end
-  
+
 end

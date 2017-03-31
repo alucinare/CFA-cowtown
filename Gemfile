@@ -50,6 +50,12 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'simple_form'
 # https://github.com/plataformatec/simple_form
 
+gem "rolify"
+#https://github.com/RolifyCommunity/rolify
+
+gem 'pundit'
+#https://github.com/elabs/pundit
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

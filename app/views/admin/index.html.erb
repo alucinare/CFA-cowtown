@@ -1,0 +1,24 @@
+<p id="noticed" class="denied"><%= notice %></p>p>
+
+<h1>Admin#index</h1>
+<p>Find me in app/views/admin/index.html.erb</p>
+<p><%= @all_users %></p>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Email</td>
+      <td>User Type</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.user_type %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

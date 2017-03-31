@@ -1,5 +1,6 @@
 class ContactMailer < ApplicationMailer
 
+  # this is in its own folder but it is a class
   default from: 'alucinare@gmail.com'
 
    def send_contact_email(email, message)
