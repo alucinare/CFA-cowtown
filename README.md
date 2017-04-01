@@ -1,24 +1,50 @@
-# README
+# CFA-Cowtown
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blog type application for the inhabitants of Cowtown.
 
-Things you may want to cover:
+## About the Project
 
-* Ruby version
+This was an exercise we did together in class based of the Young Lamb trello board. After the first iteration I made a second iteration called Cowtown based off of the same trello board. It's blog type system that is used for the inhabitants of Cowtown to posts their thoughts and feelings about living in Cowtown.
 
-* System dependencies
 
-* Configuration
+## Requirements
 
-* Database creation
+- Ruby 2.0 or later.
+- Ruby on Rails 5.0 or later.
+- Devise authentication by plataformatec.
+- Simple Form form generator by plataformatec.
+- Omniauth-facebook by mkdynamic.
+- Materialize-sass by mkhairi.
+- Friendly_id by norman.
+- Rolify by Rolify Community.
+- Pundit by elabs.
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Clone the directory onto local drive then:
 
-* Services (job queues, cache servers, search engines, etc.)
+   `$ cd CFA-cowtown`
 
-* Deployment instructions
+Then execute:
 
-* ...
+   `$ bundle`
+
+This will install the gemfiles that have already been included in the gem file.
+
+## Usage
+
+Clone the directory onto local drive. Cd into the directory. Then execute:
+
+`$ rails s`
+
+In browser navigate to:
+
+`localhost:3000`
+
+## Known Bugs
+
+- Issues with the design and with limited functionality due to it being a practice project. There are no obvious bugs at the moment.
+
+## Screen shots
+
+![alt tag]()
