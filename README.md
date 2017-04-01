@@ -6,6 +6,8 @@ This is a blog type application for the inhabitants of Cowtown.
 
 This was an exercise we did together in class based of the Young Lamb trello board. After the first iteration I made a second iteration called Cowtown based off of the same trello board. It's blog type system that is used for the inhabitants of Cowtown to posts their thoughts and feelings about living in Cowtown.
 
+This was a way to test how to login in with the use of various social media sites like Facebook. Later on we exprimented with added roles to the application. We added an admin role that can view all the posts of a user and delete users. A future exercise - CFA-Samurai-Pizza-Cats - matures the way this is implemented.
+
 
 ## Requirements
 
@@ -47,4 +49,6 @@ In browser navigate to:
 
 ## Screen shots
 
-![alt tag]()
+Trello board - a group trello board based on Young Lamb blog.
+
+![alt tag](https://github.com/alucinare/CFA-cowtown/blob/master/images/trello_cowtown.png)
